@@ -1,31 +1,37 @@
 import "./App.css";
-import categories from "./movies.json";
+import data from "./movies.json";
 import logo from "./assets/img/logo.png";
 // import "./components/Header";
 
 function App() {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
-      {" "}
       <header>
         <div className="logo">
           <img alt="netflix" src={logo} />
         </div>
       </header>
-      <div>
-        <h1></h1>
+      <div className="container">
         <div>
-          const categories = [{name: "Reprendre avec"}, {name: "Comédies"}, {name: "Dessins animés"}, {name: "Documentaires"} {name: "Tendances actuelles"}];
-            return (
-              <ul>
-                {categories.map ((category, index)=> {
-                  return <li key={index}><span>movie</span></li>
-                }
-                )}
-              </ul>
-            )
-
+          <ul>
+            {data.map((elem, index) => {
+              return (
+                <li key={index}>
+                  <span> {elem.category}</span>
+                  <ul className="carousel">
+                    {elem.images.map((pics, index) => {
+                      return (
+                        <li key={index}>
+                          <img src={pics} />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>
