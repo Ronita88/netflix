@@ -1,15 +1,34 @@
 import "./App.css";
-import "./movies.json";
-import logo from "./assets/img/logoNetflix.png";
-import "./components/Header";
+import categories from "./movies.json";
+import logo from "./assets/img/logo.png";
+// import "./components/Header";
 
 function App() {
+  console.log(data);
   return (
-    <header>
+    <div>
+      {" "}
+      <header>
+        <div className="logo">
+          <img alt="netflix" src={logo} />
+        </div>
+      </header>
       <div>
-        <img alt="netflix" src={logo} />
+        <h1></h1>
+        <div>
+          const categories = [{name: "Reprendre avec"}, {name: "Comédies"}, {name: "Dessins animés"}, {name: "Documentaires"} {name: "Tendances actuelles"}];
+            return (
+              <ul>
+                {categories.map ((category, index)=> {
+                  return <li key={index}><span>movie</span></li>
+                }
+                )}
+              </ul>
+            )
+
+        </div>
       </div>
-    </header>
+    </div>
   );
 }
 
